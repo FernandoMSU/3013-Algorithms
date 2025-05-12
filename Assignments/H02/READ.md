@@ -59,16 +59,14 @@ Powers of 2: Can cause patterns in the hash function, leading to clustering and 
 
 ## Part B: Simulation and Diagram Exercises
 
-Exercise 1: Open Hashing (Separate Chaining)
+| Exercise 1: Open Hashing (Separate Chaining)|
+| :------------------------------------------------------------------------:|
+| <img src="https://i.imgur.com/bvMeGMH.png" width="400" >  |
+|Here's a step-by-step visualization of the AVL tree after each insertion:
+Collisions occurred at:
 
-Given Keys: {5, 22, 17, 18, 35, 101, 16, 0, 8}
-
-Index
-
-Bucket Contents
-
-
-Collisions occur in buckets 5 and 8, requiring chaining.
+Bucket 5: Contains [5, 35]
+Bucket 8: Contains [18, 8]
 
 
 
