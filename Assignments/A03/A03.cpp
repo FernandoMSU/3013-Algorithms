@@ -6,83 +6,102 @@
 
 using namespace std;
 
+// Node structure for BST
 struct Node {
-    int data;
-    Node *left, *right;
-    Node(int x) : data(x), left(nullptr), right(nullptr) {}
+    int key;
+    Node* left;
+    Node* right;
+
+    Node(int value) : key(value), left(nullptr), right(nullptr) {}
 };
 
-class Bst {
-    Node *root;
+// Helper function to find the node with the minimum key in a subtree
+Node* findMin(Node* root) {
+    while (root && root->left != nullptr)
+        root = root->left;
+    return root;
+}
 
-    void _print(Node *subroot) {
-        if (!subroot) return;
-        _print(subroot->left);
-        cout << subroot->data << " ";
-        _print(subroot->right);
-    }
+// Delete function for BST
+Node* deleteNode(Node* root, int key) {
+    if (root == nullptr) return nullptr;
 
-    void _insert(Node *&subroot, int x) {
-        if (!subroot)
-            subroot = new Node(x);
-        else if (x < subroot->data)
-            _insert(subroot->left, x);
-        else
-            _insert(subroot->right, x);
-    }
+    // Step 1: Traverse the tree to locate the node
+    if (key < root->key) {
+        root->left = deleteNode(root->left, key);
+    } else if (key > root->key) {
+        root->right = deleteNode(root->right, key);
+    } else {
+        // Node with matching key found
 
-    Node* _delete(Node *subroot, int key) {
-        if (!subroot) return subroot;
-        if (key < subroot->data)
-            subroot->left = _delete(subroot->left, key);
-        else if (key > subroot->data)
-            subroot->right = _delete(subroot->right, key);
-        else {
-            if (!subroot->left) {
-                Node *temp = subroot->right;
-                delete subroot;
-                return temp;
-            } else if (!subroot->right) {
-                Node *temp = subroot->left;
-                delete subroot;
-                return temp;
-            }
-            Node *temp = _minValueNode(subroot->right);
-            subroot->data = temp->data;
-            subroot->right = _delete(subroot->right, temp->data);
+        // Case 1: Node with no children (leaf)
+        if (root->left == nullptr && root->right == nullptr) {
+            delete root;
+            return nullptr;
         }
-        return subroot;
+
+        // Case 2: Node with only one child
+        else if (root->left == nullptr) {
+            Node* temp = root->right;
+            delete root;
+            return temp;
+        } else if (root->right == nullptr) {
+            Node* temp = root->left;
+            delete root;
+            return temp;
+        }
+
+        // Case 3: Node with two children
+        else {
+            // Find the inorder successor (smallest in right subtree)
+            Node* successor = findMin(root->right);
+            // Copy the successor's key to this node
+            root->key = successor->key;
+            // Delete the successor node from right subtree
+            root->right = deleteNode(root->right, successor->key);
+        }
     }
 
-    Node* _minValueNode(Node *node) {
-        while (node->left)
-            node = node->left;
-        return node;
+    return root;
+}
+
+// Simple function to insert nodes into BST (for testing)
+Node* insert(Node* root, int key) {
+    if (root == nullptr) return new Node(key);
+    if (key < root->key) root->left = insert(root->left, key);
+    else root->right = insert(root->right, key);
+    return root;
+}
+
+// Inorder traversal for testing
+void inorder(Node* root) {
+    if (root != nullptr) {
+        inorder(root->left);
+        cout << root->key << " ";
+        inorder(root->right);
     }
+}
 
-public:
-    Bst() : root(nullptr) {}
-
-    void insert(int x) { _insert(root, x); }
-    void remove(int x) { root = _delete(root, x); }
-    void print() { _print(root); cout << endl; }
-};
-
+// Main function for demonstration
 int main() {
-    Bst tree;
-    tree.insert(10);
-    tree.insert(5);
-    tree.insert(15);
-    tree.insert(2);
-    tree.insert(7);
-    tree.insert(20);
+    Node* root = nullptr;
+    root = insert(root, 50);
+    root = insert(root, 30);
+    root = insert(root, 70);
+    root = insert(root, 20);
+    root = insert(root, 40);
+    root = insert(root, 60);
+    root = insert(root, 80);
 
-    cout << "BST before deletion: ";
-    tree.print();
+    cout << "Inorder before deletion: ";
+    inorder(root);
+    cout << endl;
 
-    tree.remove(10);
-    cout << "BST after deleting 10: ";
-    tree.print();
-    
+    root = deleteNode(root, 50);
+
+    cout << "Inorder after deletion: ";
+    inorder(root);
+    cout << endl;
+
     return 0;
 }
