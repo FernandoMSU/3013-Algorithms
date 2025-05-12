@@ -1,4 +1,4 @@
-| AVL 1|
+| Set 1: Left-Right and Right-Left Rotations|
 | :------------------------------------------------------------------------:|
 | <img src="https://i.imgur.com/9H7ubXv.png" width="400" >  |
 |Here's a step-by-step visualization of the AVL tree after each insertion:
