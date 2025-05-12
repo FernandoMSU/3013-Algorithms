@@ -1,6 +1,6 @@
 | AVL 1|
 | :------------------------------------------------------------------------:|
-| <img src="https://thumbs2.imgbox.com/8e/11/JFxcaFeZ_t.png" width="400" >  |
+| <img src="https://i.imgur.com/9H7ubXv.png" width="400" >  |
 |Here's a step-by-step visualization of the AVL tree after each insertion:
 
 Insert 10 – Root node.
