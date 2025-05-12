@@ -3,7 +3,7 @@ Description:
 This assignment is just proof of being at the event and watching a presentation.
 
 | :------------------------------------------------------------------------: |
-|  img src="https://thumbs2.imgbox.com/ab/c6/7qC8bERn_t.jpeg" width="400"  |
+|  img src="https://thumbs2.imgbox.com/fb/0d/fHQLKJ7a_t.jpg" width="400"  |
 | This is a picture as the presentation was going on. |
 
 |                                Celebration of Scholarship                                 |
