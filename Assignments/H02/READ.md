@@ -74,13 +74,11 @@ Bucket 8: Contains [18, 8]
 
 
 
-Exercise 2: Closed Hashing (Linear Probing)
-
-Given Keys: {5, 22, 17, 18, 35, 101, 16, 0, 8}
-
-Index
-
-Stored Key
+|Exercise 2: Closed Hashing (Open Addressing)|
+| :------------------------------------------------------------------------:|
+| <img src="https://i.imgur.com/bvMeGMH.png" width="400" >  |
+|Here's a step-by-step visualization of the AVL tree after each insertion:
+Collisions occurred at:
 
 
 Clustering is visible, particularly around index 5.
