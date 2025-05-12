@@ -81,24 +81,22 @@ Bucket 8: Contains [18, 8]
 Collisions occurred at:
 
 
-Clustering is visible, particularly around index 5.
+Index 5 to 9 forms a clear primary cluster, where multiple collisions caused keys to be linearly displaced.
+Keys like 35, 16, and 8 encountered several probes, which is a classic sign of linear clustering—this degrades performance over time.
+
+
+|Exercise 3: Impact of Poor Table Sizes|
+| :------------------------------------------------------------------------:|
+| <img src="https://i.imgur.com/wAKb9ik.png" width="400" >  |
+|Here's a step-by-step visualization of the AVL tree after each insertion:
+Collisions occurred at:
 
 
 
 
 
 
-
-Exercise 3: Impact of Poor Table Sizes
-Given Keys: {5, 10, 15, 20, 25, 30, 35, 40}
-
-Table Size = 10
-
-All keys map to the same bucket (0) in chaining or create long probes in open addressing.
-
-Table Size = 11 (Prime Number)
-
-Hashes distribute more evenly, reducing collisions.
+.
 
 
 Extra Credit: Experiment with Quadratic Probing
