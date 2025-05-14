@@ -2,9 +2,9 @@
 
 |  #  | Folder Link | Assignment Description |
 | :-: | ----------- | ---------------------- |
-|  1  | [01-A01](./A03/READ.md)      | [Code Repository](./A03/A03.cpp)          |
-|  2  | [02-A02](./A04/README.md)      | [Slack](./02-A02/README.md)         |
-|  3  | [03-A03](./A03/README.md)      | [BST Delete](./03-A03/README.md)          |
-|  5  | [05-H01](./05-H01/README.md)      | [AVL Tree](./05-H01/main.cpp)          |
-|  4  | [A04](./A04/README.md) | [COS - Celebration of Scholarship](./A04/README.md) |
+|  1  | [01-A04](./A03/READ.md)      | [Code Repository](./A03/A03.cpp)          |
+|  2  | [02-A03](./A04/READ.md)      | [Slack](./02-A02/README.md)         |
+|  3  | [03-H01](./A03/README.md)      | [BST Delete](./03-A03/README.md)          |
+|  5  | [05-H02](./05-H01/README.md)      | [AVL Tree](./05-H01/main.cpp)          |
+|  4  | [P01](./A04/README.md) | [COS - Celebration of Scholarship](./A04/README.md) |
 |  6  | [06-H02](./06-H02/README.md)      | [Hashing Homework](./06-H02/README.md)          |
