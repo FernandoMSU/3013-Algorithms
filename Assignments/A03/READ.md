@@ -1,5 +1,5 @@
 ## A03: BST Delete
-### Eduardo Robles
+### Fernando Gonzalez
 ### Description: 
 
 This assignment will find a delete method to the binary search tree code.
